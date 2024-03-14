@@ -1,4 +1,5 @@
 import useData from "./useData";
+import { Genre } from "./useGenres";
 
 //Exported the interface so we can use it in the GameCards
 
@@ -15,5 +16,5 @@ export interface Games {
     metacritic : number
   }
 
-const useGames = () => useData<Games>('/games')
+const useGames = (selectedGenre: Genre | null) => useData<Games>('/games',{params: {genres: selectedGenre?.id }}, [selectedGenre?.id])
 export default useGames;
