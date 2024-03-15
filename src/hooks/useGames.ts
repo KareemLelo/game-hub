@@ -22,6 +22,7 @@ const useGames = (gameQuery : GameQuery) => useData<Games>('/games',{
   params: {
     genres: gameQuery.genre?.id, 
     platforms: gameQuery.genre?.id,
-    Ordering: gameQuery.SortOrder 
+    Ordering: gameQuery.SortOrder,
+    Searh: gameQuery.searchText
   }}, [gameQuery])
 export default useGames;
